@@ -1,0 +1,24 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<script> 
+    var data = {{ data|tojson }}
+    search = true
+    view = false
+</script>
+
+<div class = "row">
+    <div class = "col-md-12">
+        <div class = "searchTitle">
+            Search results for {{ search }}
+        </div>
+    </div>
+</div>
+<div class = "row">
+    <div class = "col-md-12">
+        <div id = "resultsplace"></div>
+    </div>
+</div>
+
+{% endblock %}

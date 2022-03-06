@@ -1,0 +1,95 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<script> 
+    var result = {{ result|tojson }}
+    search = false
+    view = true
+</script>
+
+<div class = "row">
+    <div class = "col-md-12">
+        
+    </div> 
+</div>
+<div class = "row">
+    <div class = "col-md-1"></div>
+    <div class = "col-md-10">
+        <div id = "resultsplace">
+            <div class = "title">
+                {{ result["project"]}}
+            </div>
+            <div class = "image">
+                <img class = "normalized" src = {{ result["image"] }}>
+            </div>
+            <div class = "location">
+                <span class = "address">{{ result["address"]}}</span> — <span class = "address">{{ result["neighborhood"]}}</span>
+            </div>
+            <div class = "summary">
+                {{ result["summary"]}}
+            </div>
+            <div class = "sqft">
+                Square footage: {{ result["sqft"]}}
+            </div>
+            <div class = "cost">
+                Cost of development: {{ result["cost"]}}
+            </div>
+            <div class = "developers">
+                {% if result["contractors"]|length > 0 %}
+                    Developers: 
+                    {% for developer in result["developers"] %}
+                    <br>
+                    {{ developer }}
+                    
+                    {% endfor %}
+                {% else %}
+                    No developer information available at this time.
+                {% endif %}
+            </div>
+            <div class = "financiers">
+                {% if result["financiers"]|length > 0 %}
+                    Financing:
+                    {% for financier in result["financiers"] %}
+                    <br>
+                    {{ financier }}
+                    
+                    {% endfor %}
+                {% else %}
+                    No financing information available at this time.
+                {% endif %}
+
+            </div>
+            <div class = "contractors">
+                {% if result["contractors"]|length > 0 %}
+                    Contractors: 
+                    {% for contractor in result["contractors"] %}
+                    <br>
+                    {{ contractor }}
+                    
+                    {% endfor %}
+                {% else %}
+                    No contractor information available at this time.
+                {% endif %}
+            </div>
+            <div class = "completed">
+                Completed: 
+                {% if result["completed"]["year"]|length > 1 and result["completed"]["month"]|length > 1 and result["completed"]["day"]|length > 1 %}
+                    {{result["completed"]["month"] }} {{result["completed"]["day"] }}, {{result["completed"]["year"] }}  
+                {% elif result["completed"]["year"]|length > 1 and result["completed"]["month"]|length > 1 %}
+                    {{result["completed"]["month"] }}, {{result["completed"]["year"] }}
+                {% elif result["completed"]["year"]|length > 1 %}
+                    {{result["completed"]["year"] }}
+                {% else %}
+                    N/A 
+                {% endif %}
+            </div>
+            
+
+
+        </div>
+    </div>
+    <div class = "col-md-1"></div>
+</div>
+
+{% endblock %}

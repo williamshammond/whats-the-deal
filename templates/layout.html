@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="data:,">
+
+    <!-- jquery -->
+  <script src="http://code.jquery.com/jquery-3.3.1.min.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.min.js"></script>  
+  <link rel="stylesheet" href="http://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
+
+
+  <link rel="stylesheet" href="{{url_for('static', filename='main.css')}}">
+
+  <script src = "{{url_for('static', filename = 'deal.js')}}"></script>
+  <script>
+        var search = false
+        var view = false
+    </script>
+
+  <link rel="stylesheet" href="{{url_for('static', filename='main.css')}}">
+
+    <title>Whats the Deal?</title>
+</head>
+
+<body>
+    <nav id = "nav" class="navbar navbar-dark justify-content-between">
+        <div class="container">
+          <a class="navtext navbar-brand" href="/">What's the Deal?</a>
+          <form id = "searchform" class="form-inline">
+            <input id = "input" class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
+            <button class="btn btn-primary my-2 my-sm-0" type="submit">Search</button>
+          </form>
+
+      </nav>
+
+        {% block content %}
+        {% endblock %}
+    
+</body>
+</html>

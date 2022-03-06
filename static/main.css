@@ -1,0 +1,139 @@
+/* Main element styling */
+body{
+    background-color: #f7f7f7;
+}
+
+div{
+    font-family: "Avenir Medium";
+}
+
+img.small{
+    height: auto;
+    width: 100%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+.homerow{
+    padding-top: 20px;
+}
+.vl {
+    border-left: 1px solid #2e496e;
+    height: 200px;
+    display: inline-block;
+}
+
+.result{
+    font-size: 20px;
+}
+
+.resultTitle{
+    font-size: 30px;
+}
+
+
+#nav{
+    background-color: #2e496e;
+    
+}
+/*-------------SPAN STYLING-------------*/
+span{
+    font-family: "Avenir Medium";
+}
+.name{
+    color:#2e496e;
+    font-size: 25px;
+}
+.orange{
+    color:#de4402;
+}
+.blue{
+    color:#2e496e;
+}
+
+
+#topbanner{
+    margin-left: 0px;
+    width: 100%;
+    height: auto;
+}
+.navtext{
+    font-size: 50px;
+    
+}
+.btn-primary, .btn-primary:hover, .btn-primary:active, .btn-primary:visited {
+    background-color: #de4402  !important;
+}
+
+
+.featuretext{
+    vertical-align: top;
+    width: auto;
+    overflow-wrap: break-word;
+}
+
+input.form-control { width: 400px!important; }
+
+.searchTitle{
+    font-size: 30px;
+}
+
+IMG.normalized{
+    height: 200px;
+}
+.orange{
+    color: #de4402;
+}
+#hometext{
+    margin-top: 20px;
+    font-family: "Avenir Medium";
+    font-size: 20px;
+}
+
+/*View Section Titles*/
+.title{
+    font-size: 30px;
+}
+
+.location{
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+.address{
+    font-weight: bold;
+}
+
+.summary{
+    padding: 10px;
+}
+
+.developers{
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.financiers{
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.completed{
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.sqft{
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.cost{
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.developers{
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
