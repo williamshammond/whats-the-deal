@@ -1,24 +1,33 @@
 {% extends "layout.html" %}
 
 {% block content %}
+<script src = "{{url_for('static', filename = 'search.js')}}"></script>
 
 <script> 
-    var data = {{ data|tojson }}
-    search = true
-    view = false
+    var results = {{ results|tojson }}
+    var search = {{ search|tojson }}
 </script>
 
-<div class = "row">
-    <div class = "col-md-12">
-        <div class = "searchTitle">
-            Search results for {{ search }}
+<div class = "container">
+
+    <div class = "row">
+        <div class = "col-md-1"></div>
+        <div class = "col-md-11">
+            <div class = "searchTitle">
+                {% if results|length > 0 %}
+                    {{results|length}} search results for <span class = orange>{{ search }} </span> 
+                {% else %}
+                    No results found for <span class = orange>{{ search }} </span>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+    <div class = "row">
+        <div class = "col-md-12">
+            <div id = "resultsplace"></div>
         </div>
     </div>
 </div>
-<div class = "row">
-    <div class = "col-md-12">
-        <div id = "resultsplace"></div>
-    </div>
-</div>
+
 
 {% endblock %}

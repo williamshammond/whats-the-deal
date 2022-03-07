@@ -1,4 +1,4 @@
-/* Main element styling */
+/*----------------------------- HTML ELEMENT STYLING -------------------------- */
 body{
     background-color: #f7f7f7;
 }
@@ -6,22 +6,58 @@ body{
 div{
     font-family: "Avenir Medium";
 }
+span{
+    font-family: "Avenir Medium";
+}
+/*
+br {
+    display: block; 
+    content: ""; 
+    margin-top: 10px; 
+}
+*/
 
 img.small{
     height: auto;
-    width: 100%;
+    max-width: 100%;
+    max-height: 250px;
     display: block;
     margin-left: auto;
     margin-right: auto;
 }
+
+img.thumbnail{
+    height: auto;
+    max-width: 100%;
+    max-height: 150px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+IMG.normalized{
+    height: 200px;
+}
+
+hr.viewhr{
+    border-width: 3px;
+    border-color: #2e496e;
+    margin-top: 0px;
+}
+hr.viewSmall{
+    border-width: 1px;
+    border-color: #2e496e; 
+}
+
+
+/*----------------------------- ROWS -------------------------- */
 .homerow{
+    padding-bottom: 30px;
+}
+.resultrow{
     padding-top: 20px;
 }
-.vl {
-    border-left: 1px solid #2e496e;
-    height: 200px;
-    display: inline-block;
-}
+
 
 .result{
     font-size: 20px;
@@ -30,19 +66,49 @@ img.small{
 .resultTitle{
     font-size: 30px;
 }
+.nameRow{
+    padding-bottom: 5px;
+}
 
+
+
+/*----------------------------- MAP -------------------------- */
+
+#map {
+    height: 300px;
+    width: 500px;
+}
+
+
+/*----------------------------- NAV/BOOSTRAP ELEMENTS -------------------------- */
+
+input.form-control { width: 400px!important; }
 
 #nav{
     background-color: #2e496e;
     
 }
-/*-------------SPAN STYLING-------------*/
-span{
-    font-family: "Avenir Medium";
+
+.btn-primary, .btn-primary:hover, .btn-primary:active, .btn-primary:visited {
+    background-color: #de4402  !important;
 }
+
+/*----------------------------- TEXT/SPAN STYLING -------------------------- */
+
+#hometext{
+    margin-top: 20px;
+    font-family: "Avenir Medium";
+    font-size: 20px;
+}
+
 .name{
     color:#2e496e;
-    font-size: 25px;
+    font-size: 28px;
+    margin-left: 0px;
+    padding-bottom: 10px;
+}
+.orange{
+    color: #de4402;
 }
 .orange{
     color:#de4402;
@@ -50,50 +116,60 @@ span{
 .blue{
     color:#2e496e;
 }
+.highlight{
+    text-decoration: underline;
+}
+.searchinfo{
+    color:#2e496e;
+    font-size: 20px;
+}
+.searchTitle{
+    margin-top: 20px;
+    font-size: 30px;
+    color: #2e496e;
+}
+.viewTitle{
+    font-size: 35px;
+    color: #2e496e;
+    margin-top: 10px;
+}
+.navtext{
+    font-size: 50px;
+}
 
+/*----------------------------- DIV STYLING -------------------------- */
+
+.homefeature{
+    background-color: #f2f2f2;
+    height: 100%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
 
 #topbanner{
     margin-left: 0px;
     width: 100%;
     height: auto;
 }
-.navtext{
-    font-size: 50px;
-    
-}
-.btn-primary, .btn-primary:hover, .btn-primary:active, .btn-primary:visited {
-    background-color: #de4402  !important;
+
+.shiftleft{
+    margin-left: -20px;
 }
 
-
-.featuretext{
-    vertical-align: top;
-    width: auto;
-    overflow-wrap: break-word;
+.summary{
+    font-size: 18px;
+    color: #2e496e;
 }
 
-input.form-control { width: 400px!important; }
-
-.searchTitle{
-    font-size: 30px;
+.fact{
+    margin-top: 10px;
+    font-size: 19px;
+    display: inline-block;
+    margin-right: 10px;
 }
 
-IMG.normalized{
-    height: 200px;
-}
-.orange{
-    color: #de4402;
-}
-#hometext{
-    margin-top: 20px;
-    font-family: "Avenir Medium";
-    font-size: 20px;
-}
-
-/*View Section Titles*/
-.title{
-    font-size: 30px;
-}
 
 .location{
     padding-top: 10px;
@@ -101,10 +177,8 @@ IMG.normalized{
 }
 .address{
     font-weight: bold;
-}
-
-.summary{
-    padding: 10px;
+    font-size: 20px;
+    color: #2e496e;
 }
 
 .developers{
@@ -122,11 +196,6 @@ IMG.normalized{
     padding-bottom: 10px;
 }
 
-.sqft{
-    padding-top: 10px;
-    padding-bottom: 10px;
-}
-
 .cost{
     padding-top: 10px;
     padding-bottom: 10px;
@@ -137,3 +206,17 @@ IMG.normalized{
     padding-bottom: 10px;
 }
 
+/*----------------------------- EXTRANEOUS / EXTRA DIVS -------------------------- */
+.vl {
+    border-left: 1px solid #2e496e;
+    height: 200px;
+    display: inline-block;
+}
+
+
+.vert{
+    width: 1px;
+    border: 1px solid #2e496e;
+    height: 90%;
+    margin-top: 30%;
+}

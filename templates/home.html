@@ -2,10 +2,13 @@
 
 {% block content %}
 
+<script src = "{{url_for('static', filename = 'home.js')}}"></script>
+
+<script> var featuredPosts = {{featured |tojson }}</script>
 
 <div class = "container">
     <div class = "row">
-        <img id = "topbanner" src = "{{url_for('static', filename='skyline.jpg')}}">
+        <img id = "topbanner" src = "{{url_for('static', filename='images/skyline.jpg')}}">
         <div id = "hometext">Figure out <span class = "orange">What’s The Deal</span> in the New York City real estate market. Who is developing, financing, and constructing some of the biggest projects in the city? And which groups are working together to get them done? Find locations, development costs, financiers, square footage, and more for some of the hottest deals in recent and past markets and get up to speed on NYC real estate
         </div>
         <div id = "featuredhold">
@@ -13,22 +16,26 @@
     </div>
     <hr>
     <div class = "row homerow">
-        <div id = "feature1" class = "col-md-6">
-    
+        <div class = "col-md-6">
+            <div id = "feature1" class = "col-md-11 homefeature"></div>
+            <div class = "col-md-1"></div>
         </div>
 
-        <div id = "feature2" class = "col-md-6">
-        
+        <div class = "col-md-6">
+            <div id = "feature2" class = "col-md-11 homefeature"></div>
+            <div class = "col-md-1"></div>
         </div>
         
     </div>
     <div class = "row homerow">
-        <div id = "feature3" class = "col-md-6">
-    
+        <div class = "col-md-6">
+            <div id = "feature3" class = "col-md-11 homefeature"></div>
+            <div class = "col-md-1"></div>
         </div>
 
-        <div id = "feature4" class = "col-md-6">
-           
+        <div class = "col-md-6">
+            <div id = "feature4" class = "col-md-11 homefeature"></div>
+            <div class = "col-md-1"></div>
         </div>
     </div>
 </div>

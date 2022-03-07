@@ -2,11 +2,185 @@
 
 {% block content %}
 
+<script src = "{{url_for('static', filename = 'view.js')}}"></script>
+
 <script> 
     var result = {{ result|tojson }}
-    search = false
-    view = true
 </script>
+
+
+<div class = "container">
+    <!-- Title Row-->
+    <div class = "row viewTitle">
+        <div class = "col-md-12">
+            {{ result["project"] }}
+            <hr class = "viewhr">
+        </div>  
+    </div>
+
+    <!-- Main Content Row-->
+    <div class = "row">
+
+        <!-- Images and map column-->
+            <div class = "col-md-4">
+
+                <!-- Row for image -->
+                <div class = "row">
+                    <div class = "col-md-12">
+                        <img class = "normalized" src = {{ result["image"] }}>
+                    </div>
+                </div>
+
+                <!-- Rows for address and neighborhood -->
+                <div class = "row">
+                    <div class = "col-md-12">
+                        <div class = "address">{{ result["address"]}}</div>
+                    </div>
+                    
+                </div>
+                <div class = "row">
+                    <div class = "col-md-12">
+                        <div class = "address">{{ result["neighborhood"]}}</div>
+                    </div>
+                </div>
+
+                <!-- Rows for map embed -->
+                <div class = "row">
+                    <div class = "col-md-12">
+                        <iframe
+                            height="250"
+                            style="border:0"
+                            loading="lazy"
+                            allowfullscreen
+                            src="https://www.google.com/maps/embed/v1/place?key=AIzaSyDH9TjICWFQ_mzFSQc2DZvbJd-K8GqlwXM
+                                &q={{ embedCode }}">
+                        </iframe>
+                    </div>
+                </div>
+
+            </div>
+
+        <!-- Spliting vertical line-->
+        <div class = "col-md-1">
+            <div class = "vert"></div>
+                
+        </div>
+        <!-- Text content column-->
+        <div class = "col-md-7">
+
+                <!-- Row for summary content -->
+                <div class = "row">
+                    <div class = "col-md-12 shiftleft summary">
+                        {{ result["summary"]}}
+                    </div>
+                </div>
+
+                <!-- Row for main facts -->
+                <div class = "row">
+                    <div class = "col-md-12 shiftleft">
+                        <div class = "fact">
+                            <span class = "blue">Size:</span> <span class = "orange">{{ result["sqftClean"]}} sqft</span>
+                        </div>
+                        <div class = "fact">
+                            <span class = "blue">Cost:</span> <span class = "orange">{{ result["costClean"]}}</span>
+                        </div>
+                        <div class = "fact">
+                            <span class = "blue">Completed:</span> <span class = "orange">{{ result["completedClean"]}}</span>
+                        </div>
+                        <hr class = "viewSmall">
+                    </div>
+                    
+                </div>
+
+
+                <!-- Row for developers -->
+                <div class = "row">
+                    <div class = "col-md-12 shiftleft fact">
+                        {% if result["developers"]|length > 0 %}
+                            <span class = "blue"> Developers: </span>
+                            {% for developer in result["developers"] %}
+                            <a href = "/searchval/{{ developer }}"><span class = "blue">{{ developer }}</span></a>
+
+                            {% if loop.index != result["developers"]|length %}
+                            |
+                            {% endif %}
+                            
+                            {% endfor %}
+                        {% else %}
+                        <span class = "blue">No developer information available at this time.</span>
+                        {% endif %}
+                    </div>
+                </div>
+
+                <!-- Row for financiers -->
+                <div class = "row">
+                    <div class = "col-md-12 shiftleft fact">
+                        {% if result["financiers"]|length > 0 %}
+                            <span class = "blue"> Financiers: </span>
+                            {% for financier in result["financiers"] %}
+                            <a href = "/searchval/{{ financier }}"><span class = "blue">{{ financier }}</span></a>
+
+                            {% if loop.index != result["financiers"]|length %}
+                            |
+                            {% endif %}
+                            
+                            {% endfor %}
+                        {% else %}
+                        <span class = "blue">No financier information available at this time.</span>
+                        {% endif %}
+                    </div>
+                </div>
+
+                <!-- Row for Contractors -->
+                <div class = "row">
+                    <div class = "col-md-12 shiftleft fact">
+                        {% if result["contractors"]|length > 0 %}
+                            <span class = "blue"> Contractors: </span>
+                            {% for financier in result["contractors"] %}
+    
+                            <a href = "/searchval/{{ financier }}"><span class = "blue">{{ financier }}</span></a> 
+                            {% if loop.index != result["contractors"]|length %}
+                            |
+                            {% endif %}
+                            {% endfor %}
+                        {% else %}
+                        <span class = "blue">No contractor information available at this time.</span>
+                        {% endif %}
+                    </div>
+                </div>
+
+
+        </div>
+
+    </div>
+    
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--
+
+
+
 
 <div class = "row">
     <div class = "col-md-12">
@@ -22,6 +196,17 @@
             </div>
             <div class = "image">
                 <img class = "normalized" src = {{ result["image"] }}>
+            </div>
+            <div id = "map">
+                <iframe
+                    width="500"
+                    height="300"
+                    style="border:0"
+                    loading="lazy"
+                    allowfullscreen
+                    src="https://www.google.com/maps/embed/v1/place?key=AIzaSyDH9TjICWFQ_mzFSQc2DZvbJd-K8GqlwXM
+                        &q={{ embedCode }}">
+                </iframe>
             </div>
             <div class = "location">
                 <span class = "address">{{ result["address"]}}</span> — <span class = "address">{{ result["neighborhood"]}}</span>
@@ -86,10 +271,25 @@
             </div>
             
 
+            
 
+    
+    
         </div>
     </div>
-    <div class = "col-md-1"></div>
+    <div class = "col-md-1"> </div>
+    --> 
+    <!--
+    <script async
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDH9TjICWFQ_mzFSQc2DZvbJd-K8GqlwXM&callback=initMap">
+    </script>
+    -->
+
+    
+
+    
+
+
 </div>
 
 {% endblock %}

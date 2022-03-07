@@ -17,11 +17,8 @@
 
   <link rel="stylesheet" href="{{url_for('static', filename='main.css')}}">
 
-  <script src = "{{url_for('static', filename = 'deal.js')}}"></script>
-  <script>
-        var search = false
-        var view = false
-    </script>
+  <script src = "{{url_for('static', filename = 'all.js')}}"></script>
+
 
   <link rel="stylesheet" href="{{url_for('static', filename='main.css')}}">
 
@@ -32,8 +29,8 @@
     <nav id = "nav" class="navbar navbar-dark justify-content-between">
         <div class="container">
           <a class="navtext navbar-brand" href="/">What's the Deal?</a>
-          <form id = "searchform" class="form-inline">
-            <input id = "input" class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
+          <form id = "searchform" action = "/search" class="form-inline" method = "GET">
+            <input id = "input" name = "input" class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
             <button class="btn btn-primary my-2 my-sm-0" type="submit">Search</button>
           </form>
 
