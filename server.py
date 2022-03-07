@@ -1,8 +1,15 @@
 from flask import Flask
 from flask import render_template
 from flask import Response, request, jsonify
+
+#PROTECTING API KEY WITH DOTENV
+from dotenv import load_dotenv
+load_dotenv()
+import os
+
 app = Flask(__name__)
 
+MAPS_API_KEY = os.getenv("MAPS_API_KEY")
 
 data = { 
         "1":
@@ -312,7 +319,7 @@ def view(id):
 
     embedCode = address.replace(" ","+")
 
-    return render_template("view.html", result = result, embedCode = embedCode)
+    return render_template("view.html", result = result, embedCode = embedCode, MAPS_API_KEY = MAPS_API_KEY)
 
 
 @app.route("/add")

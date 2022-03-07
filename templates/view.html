@@ -52,7 +52,7 @@
                             style="border:0"
                             loading="lazy"
                             allowfullscreen
-                            src="https://www.google.com/maps/embed/v1/place?key=AIzaSyDH9TjICWFQ_mzFSQc2DZvbJd-K8GqlwXM
+                            src="https://www.google.com/maps/embed/v1/place?key={{MAPS_API_KEY}}
                                 &q={{ embedCode }}">
                         </iframe>
                     </div>
@@ -153,140 +153,6 @@
         </div>
 
     </div>
-    
-
-
-</div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<!--
-
-
-
-
-<div class = "row">
-    <div class = "col-md-12">
-        
-    </div> 
-</div>
-<div class = "row">
-    <div class = "col-md-1"></div>
-    <div class = "col-md-10">
-        <div id = "resultsplace">
-            <div class = "title">
-                {{ result["project"]}}
-            </div>
-            <div class = "image">
-                <img class = "normalized" src = {{ result["image"] }}>
-            </div>
-            <div id = "map">
-                <iframe
-                    width="500"
-                    height="300"
-                    style="border:0"
-                    loading="lazy"
-                    allowfullscreen
-                    src="https://www.google.com/maps/embed/v1/place?key=AIzaSyDH9TjICWFQ_mzFSQc2DZvbJd-K8GqlwXM
-                        &q={{ embedCode }}">
-                </iframe>
-            </div>
-            <div class = "location">
-                <span class = "address">{{ result["address"]}}</span> — <span class = "address">{{ result["neighborhood"]}}</span>
-            </div>
-            <div class = "summary">
-                {{ result["summary"]}}
-            </div>
-            <div class = "sqft">
-                Square footage: {{ result["sqft"]}}
-            </div>
-            <div class = "cost">
-                Cost of development: {{ result["cost"]}}
-            </div>
-            <div class = "developers">
-                {% if result["contractors"]|length > 0 %}
-                    Developers: 
-                    {% for developer in result["developers"] %}
-                    <br>
-                    {{ developer }}
-                    
-                    {% endfor %}
-                {% else %}
-                    No developer information available at this time.
-                {% endif %}
-            </div>
-            <div class = "financiers">
-                {% if result["financiers"]|length > 0 %}
-                    Financing:
-                    {% for financier in result["financiers"] %}
-                    <br>
-                    {{ financier }}
-                    
-                    {% endfor %}
-                {% else %}
-                    No financing information available at this time.
-                {% endif %}
-
-            </div>
-            <div class = "contractors">
-                {% if result["contractors"]|length > 0 %}
-                    Contractors: 
-                    {% for contractor in result["contractors"] %}
-                    <br>
-                    {{ contractor }}
-                    
-                    {% endfor %}
-                {% else %}
-                    No contractor information available at this time.
-                {% endif %}
-            </div>
-            <div class = "completed">
-                Completed: 
-                {% if result["completed"]["year"]|length > 1 and result["completed"]["month"]|length > 1 and result["completed"]["day"]|length > 1 %}
-                    {{result["completed"]["month"] }} {{result["completed"]["day"] }}, {{result["completed"]["year"] }}  
-                {% elif result["completed"]["year"]|length > 1 and result["completed"]["month"]|length > 1 %}
-                    {{result["completed"]["month"] }}, {{result["completed"]["year"] }}
-                {% elif result["completed"]["year"]|length > 1 %}
-                    {{result["completed"]["year"] }}
-                {% else %}
-                    N/A 
-                {% endif %}
-            </div>
-            
-
-            
-
-    
-    
-        </div>
-    </div>
-    <div class = "col-md-1"> </div>
-    --> 
-    <!--
-    <script async
-        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDH9TjICWFQ_mzFSQc2DZvbJd-K8GqlwXM&callback=initMap">
-    </script>
-    -->
-
-    
-
     
 
 
